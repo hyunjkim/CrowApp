@@ -36,6 +36,7 @@ public class AnimalFragment extends Fragment {
     private View view;
     private RecyclerView mRecycler;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class AnimalFragment extends Fragment {
 
                 mRecycler = (RecyclerView) view.findViewById(R.id.animal_RV);
                 mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-                mRecycler.setAdapter(new AnimalAdapter(animalInfo));
+                mRecycler.setAdapter(new AnimalAdapter(animalInfo,view));
 
                 Toast.makeText(getActivity(), "SUCCESSFUL", Toast.LENGTH_SHORT).show();
             }

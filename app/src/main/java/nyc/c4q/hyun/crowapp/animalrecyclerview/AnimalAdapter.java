@@ -12,16 +12,16 @@ import nyc.c4q.hyun.crowapp.animals.Animals;
 
 /**
  * Created by Hyun on 12/21/16.
- *     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.washingtonpost_recycler,parent,false);
- return new WashingtonPostViewHolder(view);
  */
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
 
     private LayoutInflater inflater;
     private List<Animals> animalList;
+    private View mRoot;
 
-    public AnimalAdapter(List<Animals> animalList) {
+    public AnimalAdapter(List<Animals> animalList, View view) {
         this.animalList = animalList;
+        mRoot = view;
     }
 
     @Override
@@ -33,7 +33,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
 
     @Override
     public void onBindViewHolder(AnimalViewHolder holder, int position) {
-        holder.showAnimals(animalList.get(position));
+        holder.showAnimals(animalList.get(position),mRoot);
+
     }
 
     @Override
